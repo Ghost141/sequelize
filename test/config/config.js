@@ -15,7 +15,11 @@ module.exports = {
   },
 
   mssql: {
-    database: process.env.SEQ_MSSQL_DB   || process.env.SEQ_DB   || ('sequelize-test-' + ~~(Math.random() * 100)),
+    database: process.env.SEQ_MSSQL_DB   || process.env.SEQ_DB   || (function () {
+      var db = 'sequelize-test-' + ~~(Math.random() * 100);
+      console.log('Using database: ', db);
+      return db;
+    }()),
     username: process.env.SEQ_MSSQL_USER || process.env.SEQ_USER || 'sequelize',
     password: process.env.SEQ_MSSQL_PW   || process.env.SEQ_PW   || 'nEGkLma26gXVHFUAHJxcmsrK',
     host:     process.env.SEQ_MSSQL_HOST || process.env.SEQ_HOST || 'mssql.sequelizejs.com',
