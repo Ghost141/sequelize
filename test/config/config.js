@@ -22,7 +22,7 @@ module.exports = {
     }()),
     username: process.env.SEQ_MSSQL_USER || process.env.SEQ_USER || 'sequelize',
     password: process.env.SEQ_MSSQL_PW   || process.env.SEQ_PW   || 'nEGkLma26gXVHFUAHJxcmsrK',
-    host:     process.env.SEQ_MSSQL_HOST || process.env.SEQ_HOST || 'mssql.sequelizejs.com',
+    host:     process.env.SEQ_MSSQL_HOST || process.env.SEQ_HOST || '52.2.16.145',
     port:     process.env.SEQ_MSSQL_PORT || process.env.SEQ_PORT || 11433,
     pool:     {
       maxConnections: process.env.SEQ_MSSQL_POOL_MAX  || process.env.SEQ_POOL_MAX  || 5,
